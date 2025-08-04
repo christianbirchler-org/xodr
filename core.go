@@ -68,6 +68,7 @@ type ZeroOne float64
 type OpenDriveElement struct {
 }
 
+// Validates if OpenDriveElement adheres to the OpenDRIVE specifiction
 func (ct *OpenDriveElement) Check() error {
 	return errors.New("not implemented")
 }
@@ -77,6 +78,7 @@ func (ct *OpenDriveElement) Check() error {
 type DataQuality struct {
 }
 
+// Validates if DataQuality adheres to the OpenDRIVE specifiction
 func (ct *DataQuality) Check() error {
 	return errors.New("not implemented")
 }
@@ -86,6 +88,7 @@ func (ct *DataQuality) Check() error {
 type DataQualityError struct {
 }
 
+// Validates if DataQualityError adheres to the OpenDRIVE specifiction
 func (ct *DataQualityError) Check() error {
 	return errors.New("not implemented")
 }
@@ -94,6 +97,7 @@ func (ct *DataQualityError) Check() error {
 type DataQualityRawData struct {
 }
 
+// Validates if DataQualityRawData adheres to the OpenDRIVE specifiction
 func (ct *DataQualityRawData) Check() error {
 	return errors.New("not implemented")
 }
@@ -117,6 +121,7 @@ type Header struct {
 	West               float64                   `xml:"west,attr"`
 }
 
+// Validates if Header adheres to the OpenDRIVE specifiction
 func (ct *Header) Check() error {
 
 	// check if slice fullfils the max and min constraints
@@ -155,6 +160,7 @@ type HeaderDefaultRegulations struct {
 	SignalRegulations []*HeaderSignalRegulation `xml:"signalRegulations"`
 }
 
+// Validates if HeaderDefaultRegulations adheres to the OpenDRIVE specifiction
 func (ct *HeaderDefaultRegulations) Check() error {
 
 	// check if slice fullfils the max and min constraints
@@ -180,6 +186,7 @@ func (ct *HeaderDefaultRegulations) Check() error {
 type HeaderGeoReference struct {
 }
 
+// Validates if HeaderGeoReference adheres to the OpenDRIVE specifiction
 func (ct *HeaderGeoReference) Check() error {
 	return errors.New("not implemented")
 }
@@ -197,6 +204,7 @@ type HeaderOffset struct {
 	Z   float64 `xml:"z,attr"`
 }
 
+// Validates if HeaderOffset adheres to the OpenDRIVE specifiction
 func (ct *HeaderOffset) Check() error {
 	return errors.New("not implemented")
 }
@@ -208,6 +216,7 @@ type HeaderRoadRegulation struct {
 	Type      ERoadType         `xml:"type,attr"`
 }
 
+// Validates if HeaderRoadRegulation adheres to the OpenDRIVE specifiction
 func (ct *HeaderRoadRegulation) Check() error {
 
 	// check if slice fullfils the max and min constraints
@@ -226,6 +235,7 @@ type HeaderSignalRegulation struct {
 	Type      string            `xml:"type,attr"`
 }
 
+// Validates if HeaderSignalRegulation adheres to the OpenDRIVE specifiction
 func (ct *HeaderSignalRegulation) Check() error {
 
 	// check if slice fullfils the max and min constraints
@@ -240,6 +250,7 @@ func (ct *HeaderSignalRegulation) Check() error {
 type Include struct {
 }
 
+// Validates if Include adheres to the OpenDRIVE specifiction
 func (ct *Include) Check() error {
 	return errors.New("not implemented")
 }
@@ -253,6 +264,7 @@ type License struct {
 	Text     string `xml:"text,attr"`
 }
 
+// Validates if License adheres to the OpenDRIVE specifiction
 func (ct *License) Check() error {
 	return errors.New("not implemented")
 }
@@ -262,6 +274,7 @@ func (ct *License) Check() error {
 type UserData struct {
 }
 
+// Validates if UserData adheres to the OpenDRIVE specifiction
 func (ct *UserData) Check() error {
 	return errors.New("not implemented")
 }

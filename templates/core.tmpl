@@ -37,6 +37,7 @@ type {{ goType .Element.Name }} struct {
 
     }
 
+    // Validates if {{ goType .Name }} adheres to the OpenDRIVE specifiction
     func (ct *{{ goType .Name }})Check() error {
         {{- range .ComplexContent.Extension.Sequence.Element}}
         {{- if ne $base  .Type}}
