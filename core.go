@@ -2,6 +2,8 @@
 
 package xodr
 
+import "errors"
+
 // Root element containing all information about the ASAM OpenDRIVE file
 type OpenDrive struct {
 	Header        *Header                `xml:"header"`
@@ -66,9 +68,17 @@ type ZeroOne float64
 type OpenDriveElement struct {
 }
 
+func (ct *OpenDriveElement) Check() error {
+	return errors.New("not implemented")
+}
+
 // Describes the quality and accuracy of measurement data that is integrated i
 // nto the ASAM OpenDRIVE file.
 type DataQuality struct {
+}
+
+func (ct *DataQuality) Check() error {
+	return errors.New("not implemented")
 }
 
 // Describes the error range, given in [m], of measurement data that is integr
@@ -76,8 +86,16 @@ type DataQuality struct {
 type DataQualityError struct {
 }
 
+func (ct *DataQualityError) Check() error {
+	return errors.New("not implemented")
+}
+
 // Describes some basic metadata containing information about the raw data.
 type DataQualityRawData struct {
+}
+
+func (ct *DataQualityRawData) Check() error {
+	return errors.New("not implemented")
 }
 
 // Contains general information about the ASAM OpenDRIVE file
@@ -99,6 +117,30 @@ type Header struct {
 	West               float64                   `xml:"west,attr"`
 }
 
+func (ct *Header) Check() error {
+
+	// check if slice fullfils the max and min constraints
+	//GeoReference *HeaderGeoReference `xml:"geoReference"`
+
+	// check if it is a single pointer
+
+	// check if slice fullfils the max and min constraints
+	//Offset *HeaderOffset `xml:"offset"`
+
+	// check if it is a single pointer
+
+	// check if slice fullfils the max and min constraints
+	//License *License `xml:"license"`
+
+	// check if it is a single pointer
+
+	// check if slice fullfils the max and min constraints
+	//DefaultRegulations *HeaderDefaultRegulations `xml:"defaultRegulations"`
+
+	// check if it is a single pointer
+	return errors.New("not implemented")
+}
+
 // Defines the default regulations. In each country there are different speed
 // limits to a rural road. For example a rural road has a speed limit of 100km
 // /h in Germany and 80km/h in the Netherlands. In some countries, one is allo
@@ -113,6 +155,20 @@ type HeaderDefaultRegulations struct {
 	SignalRegulations []*HeaderSignalRegulation `xml:"signalRegulations"`
 }
 
+func (ct *HeaderDefaultRegulations) Check() error {
+
+	// check if slice fullfils the max and min constraints
+	//RoadRegulations []*HeaderRoadRegulation `xml:"roadRegulations"`
+
+	// check if it is a single pointer
+
+	// check if slice fullfils the max and min constraints
+	//SignalRegulations []*HeaderSignalRegulation `xml:"signalRegulations"`
+
+	// check if it is a single pointer
+	return errors.New("not implemented")
+}
+
 // Spatial reference systems are standardized by the European Petroleum Survey
 // Group Geodesy (EPSG) and are defined by parameters describing the geodetic
 // datum. A geodetic datum is a coordinate reference system for a collection o
@@ -122,6 +178,10 @@ type HeaderDefaultRegulations struct {
 // all be marked as CDATA, because it may contain characters that interfere wi
 // th the XML syntax of an elementâ  s attribute.
 type HeaderGeoReference struct {
+}
+
+func (ct *HeaderGeoReference) Check() error {
+	return errors.New("not implemented")
 }
 
 // To avoid large coordinates, an offset of the whole dataset may be applied u
@@ -137,11 +197,24 @@ type HeaderOffset struct {
 	Z   float64 `xml:"z,attr"`
 }
 
+func (ct *HeaderOffset) Check() error {
+	return errors.New("not implemented")
+}
+
 // Defines the default regulations for different road types.
 type HeaderRoadRegulation struct {
 	OpenDriveElement
 	Semantics *SignalsSemantics `xml:"semantics"`
 	Type      ERoadType         `xml:"type,attr"`
+}
+
+func (ct *HeaderRoadRegulation) Check() error {
+
+	// check if slice fullfils the max and min constraints
+	//Semantics *SignalsSemantics `xml:"semantics"`
+
+	// check if it is a single pointer
+	return errors.New("not implemented")
 }
 
 // Defines the default regulations for signs in different countries, for examp
@@ -153,9 +226,22 @@ type HeaderSignalRegulation struct {
 	Type      string            `xml:"type,attr"`
 }
 
+func (ct *HeaderSignalRegulation) Check() error {
+
+	// check if slice fullfils the max and min constraints
+	//Semantics *SignalsSemantics `xml:"semantics"`
+
+	// check if it is a single pointer
+	return errors.New("not implemented")
+}
+
 // Provides information about additional files that should be included while p
 // rocessing the ASAM OpenDRIVE file.
 type Include struct {
+}
+
+func (ct *Include) Check() error {
+	return errors.New("not implemented")
 }
 
 // Licensing information about the OpenDRIVE file.
@@ -167,7 +253,15 @@ type License struct {
 	Text     string `xml:"text,attr"`
 }
 
+func (ct *License) Check() error {
+	return errors.New("not implemented")
+}
+
 // Describes any additional information or data that is needed by an applicati
 // on for a specific reason.
 type UserData struct {
+}
+
+func (ct *UserData) Check() error {
+	return errors.New("not implemented")
 }

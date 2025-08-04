@@ -2,6 +2,7 @@
 
 package xodr
 
+import "errors"
 
 {{ formatStructDocumentation (removeSpecialCharacters .Element.ComplexType.Annotation.Documentation.Text) }}
 type {{ goType .Element.Name }} struct {
@@ -34,5 +35,21 @@ type {{ goType .Element.Name }} struct {
         {{- end }}
         {{- end }}
 
+    }
+
+    func (ct *{{ goType .Name }})Check() error {
+        {{- range .ComplexContent.Extension.Sequence.Element}}
+        {{- if ne $base  .Type}}
+
+
+        // check if slice fullfils the max and min constraints
+        //{{toCamel .Name}} {{- if eq .MaxOccurs "1"}} *{{goType .Type}} {{- end}} {{- if ne .MaxOccurs "1"}} []*{{goType .Type}} {{- end}} `xml:"{{.Name}}"`
+
+        // check if it is a single pointer
+
+
+        {{- end}}
+        {{- end}}
+         return errors.New("not implemented")
     }
 {{end}}
